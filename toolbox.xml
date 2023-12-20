@@ -2,6 +2,7 @@
   <category name="GAMEPAD" colour="#44cbc6" icon="gamepad">
     <block type="gamepad_init"/>
     <block type="gamepad_btn_pressed"/>
+    <block type="gamepad_read_joystick"/>
     <block type="gamepad_set_led_rgb">
       <value name="color">
         <shadow type="colour_picker">

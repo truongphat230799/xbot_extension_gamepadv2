@@ -118,9 +118,43 @@ Blockly.Python['gamepad_btn_pressed'] = function (block) {
   else if (btn == 'cross') btn = 'a';
   else if (btn == 'circle') btn = 'b';
   // TODO: Assemble Python into code variable.
-  var code = "gamepad_handler.data['" + btn + "']\n";
+  var code = "gamepad_handler.data['" + btn + "']";
   return [code, Blockly.Python.ORDER_NONE];
 };
+
+Blockly.Blocks['gamepad_read_joystick'] = {
+  init: function () {
+    this.jsonInit(
+      {
+        type: "gamepad_read_joystick",
+        message0: "khoảng kéo %1",
+        args0: [
+          {
+            type: "field_dropdown",
+            name: "joystick",
+            options: [
+              ["joystick trái", ".read_joystick(0)"],
+              ["joystick phải", ".read_joystick(1)"],
+            ],
+          }],
+          "colour": ColorBlock,
+          "output": "Number",
+          "tooltip": "",
+          "helpUrl": ""
+      }
+    );
+  }
+};
+
+
+Blockly.Python['gamepad_read_joystick'] = function (block) {
+  var joystick = block.getFieldValue('joystick');
+  // TODO: Assemble Python into code variable.
+  var code = "gamepad_handler." + joystick + "[4]";
+  return code;
+};
+
+
 Blockly.Blocks['gamepad_processing'] = {
   init: function () {
     this.jsonInit(
