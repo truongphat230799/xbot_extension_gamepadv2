@@ -46,7 +46,7 @@ Blockly.Blocks['gamepad_btn_pressed'] = {
         args0: [
           {
             type: "field_dropdown",
-            name: "btn",
+            name: "button",
             options: [
               [
                 {
@@ -112,15 +112,14 @@ Blockly.Blocks['gamepad_btn_pressed'] = {
 };
 
 Blockly.Python['gamepad_btn_pressed'] = function (block) {
-  var btn = block.getFieldValue('btn');
+  var btn = block.getFieldValue('button');
   if (btn == 'square') btn = 'x';
   else if (btn == 'triangle') btn = 'y';
   else if (btn == 'cross') btn = 'a';
   else if (btn == 'circle') btn = 'b';
-
   // TODO: Assemble Python into code variable.
   var code = "gamepad_handler.data['" + btn + "']\n";
-  return code;
+  return [code, Blockly.Python.ORDER_NONE];
 };
 Blockly.Blocks['gamepad_processing'] = {
   init: function () {
