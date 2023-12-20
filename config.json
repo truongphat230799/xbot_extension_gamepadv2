@@ -1,8 +1,7 @@
 {
-    "name": "ROBOCON",
-    "description": "Thư viện khối lệnh bổ sung cho thi đấu Robocon của robot xBot",
+    "name": "GAMEPAD PS",
+    "description": "Thư viện khối lệnh tay cầm gamepad cho robot xBot",
     "libs": [
-        "robocon_xbot.py",
         "gamepad.py",
         "gamepad_handler.py"
     ],
@@ -14,5 +13,5 @@
         "en": "languages/en.js",
         "vn": "languages/vn.js"
     },
-    "poster": "racing.png"
+    "poster": "poster.png"
 }
