@@ -102,10 +102,10 @@ Blockly.Blocks['gamepad_btn_pressed'] = {
               ["nút joystick phải", "thumbr"],
             ],
           }],
-          colour: ColorBlock,
-          output: Boolean,
-          tooltip: "",
-          helpUrl: ""
+          "colour": ColorBlock,
+          "output": "Boolean",
+          "tooltip": "",
+          "helpUrl": ""
       }
     );
   }
@@ -113,10 +113,10 @@ Blockly.Blocks['gamepad_btn_pressed'] = {
 
 Blockly.Python['gamepad_btn_pressed'] = function (block) {
   var btn = block.getFieldValue('btn');
-  if (btn == 'square') btn1 = 'x';
-  else if (btn == 'triangle') btn1 = 'y';
-  else if (btn == 'cross') btn1 = 'a';
-  else if (btn == 'circle') btn1 = 'b';
+  if (btn == 'square') btn = 'x';
+  else if (btn == 'triangle') btn = 'y';
+  else if (btn == 'cross') btn = 'a';
+  else if (btn == 'circle') btn = 'b';
 
   // TODO: Assemble Python into code variable.
   var code = "gamepad_handler.data['" + btn + "']\n";
