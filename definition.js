@@ -150,7 +150,7 @@ Blockly.Blocks['gamepad_read_joystick'] = {
 Blockly.Python['gamepad_read_joystick'] = function (block) {
   var joystick = block.getFieldValue('joystick');
   // TODO: Assemble Python into code variable.
-  var code = "gamepad_handler." + joystick + "[4]";
+  var code = "gamepad_handler.gamepad." + joystick + "[4]";
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -378,6 +378,6 @@ Blockly.Blocks["gamepad_direction"] = {
 Blockly.Python['gamepad_direction'] = function(block) {
   var dir = block.getFieldValue("dir");
   var joystick = block.getFieldValue("joystick");
-  var code = 'gamepad.read_joystick('+ joystick+ ')[3] == ' + dir + '';
+  var code = 'gamepad_handler.gamepad.read_joystick('+ joystick+ ')[3] == ' + dir ;
   return [code, Blockly.Python.ORDER_NONE];
 };
