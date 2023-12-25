@@ -1,6 +1,5 @@
 import machine
 from machine import Pin, SoftI2C
-from robocon_xbot import *
 from setting import *
 from utility import *
 from micropython import const

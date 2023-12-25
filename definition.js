@@ -118,7 +118,7 @@ Blockly.Python['gamepad_btn_pressed'] = function (block) {
   else if (btn == 'cross') btn = 'a';
   else if (btn == 'circle') btn = 'b';
   // TODO: Assemble Python into code variable.
-  var code = "gamepad_handler.data['" + btn + "']";
+  var code = "gamepad_handler.gamepad.data['" + btn + "']";
   return [code, Blockly.Python.ORDER_NONE];
 };
 
